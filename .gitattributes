@@ -1,0 +1,9 @@
+# Текстові файли — завжди LF у репозиторії
+* text=auto eol=lf
+
+# Медіа — бінарні, без змін при checkout
+*.webp binary
+*.jpg  binary
+*.png  binary
+*.mp4  binary
+*.ico  binary

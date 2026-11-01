@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Violette Beauty Studio — манікюр, педикюр і nail-дизайн у Києві</title>
+  <meta name="description" content="Преміальна студія манікюру та краси у центрі Києва. Манікюр, педикюр, авторський nail-дизайн і SPA-догляд. Стерильність медичного рівня, онлайн-запис за хвилину.">
+  <meta name="theme-color" content="#6F4FA6">
+  <meta name="color-scheme" content="light">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="Violette Beauty Studio">
+  <meta property="og:title" content="Violette Beauty Studio — мистецтво доглянутих рук">
+  <meta property="og:description" content="Манікюр, педикюр, nail-дизайн і SPA-догляд у центрі Києва. Онлайн-запис за хвилину.">
+  <meta property="og:image" content="assets/icons/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Шрифти не блокують рендер: завантажуємо як preload і вмикаємо після load -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap"></noscript>
+
+  <link rel="preload" as="image" href="assets/videos/hero-poster-sm.webp" imagesrcset="assets/videos/hero-poster-sm.webp 800w, assets/videos/hero-poster.webp 1600w" imagesizes="100vw" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Вмикаємо приховані стани анімацій лише коли JS доступний і рух не вимкнено
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.documentElement.classList.add('js', reduce ? 'reduced-motion' : 'motion');
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Violette Beauty Studio",
+    "description": "Студія манікюру, педикюру та nail-дизайну",
+    "image": "assets/icons/og-image.jpg",
+    "telephone": "+380441234567",
+    "priceRange": "₴₴",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "вул. Фіалкова, 7",
+      "addressLocality": "Київ",
+      "addressCountry": "UA"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "10:00", "closes": "20:00" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- SVG-спрайт іконок -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.4 4-2 1.3a11 11 0 006.6 6.6l1.3-2 4 1.4v2.6a2 2 0 01-2.2 2A16.5 16.5 0 014.6 5.7a2 2 0 012-2.2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L12 16.5l-5.4 2.9 1.2-5.9-4.4-4.1 6-.7z" fill="currentColor"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21.4 4.3L2.9 11.4c-1 .4-1 1.6 0 1.9l4.6 1.5 1.8 5.6c.2.7 1.1.9 1.6.4l2.6-2.5 4.8 3.5c.6.4 1.4.1 1.6-.6l3-15.6c.2-.9-.7-1.6-1.5-1.3zM9.7 14.3l-.4 4-1.5-4.9 10.4-6.7-8.5 7.6z" fill="currentColor"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-viber" viewBox="0 0 24 24"><path d="M12 2.8c-4.9 0-8.3 1.6-8.3 7.7 0 3.4 1 5.5 3 6.6v3.4c0 .5.6.8 1 .4l2.7-2.6h1.6c4.9 0 8.3-1.6 8.3-7.8S16.9 2.8 12 2.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.3 7.6c.3-.2.7-.2.9.1l.9 1.3c.2.3.2.7-.1.9l-.5.4c.4 1 1.2 1.8 2.2 2.3l.4-.5c.2-.3.6-.3.9-.1l1.3.9c.3.2.3.6.1.9-.6.9-1.4 1.2-2.3.8a8 8 0 01-4.2-4.2c-.4-.9-.1-1.7.4-2.8z" fill="currentColor"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Перейти до змісту</a>
+
+  <!-- 1. Прелоадер -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <span class="preloader__logo">
+        <span class="preloader__mono">V</span>
+        <span class="preloader__word"><span>Violette</span></span>
+      </span>
+      <span class="preloader__sub">beauty studio</span>
+      <span class="preloader__line"><span class="preloader__progress"></span></span>
+    </div>
+  </div>
+
+  <!-- 2. Шапка -->
+  <header class="header" data-header>
+    <div class="header__inner container">
+      <a class="logo" href="#top" aria-label="Violette Beauty Studio — на початок сторінки">
+        <span class="logo__word">Violette</span>
+        <span class="logo__sub">beauty studio</span>
+      </a>
+
+      <nav class="nav" aria-label="Основна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">Про нас</a></li>
+          <li><a class="nav__link" href="#services">Послуги</a></li>
+          <li><a class="nav__link" href="#portfolio">Роботи</a></li>
+          <li><a class="nav__link" href="#masters">Майстри</a></li>
+          <li><a class="nav__link" href="#reviews">Відгуки</a></li>
+          <li><a class="nav__link" href="#contacts">Контакти</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary btn--sm header__cta magnetic" href="#booking">
+        <span class="btn__label">Записатися</span>
+      </a>
+
+      <button class="burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Мобільне меню -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu__bg"></div>
+    <div class="mobile-menu__inner container">
+      <nav aria-label="Мобільна навігація">
+        <ul class="mobile-menu__list">
+          <li><a class="mobile-menu__link" href="#about"><span class="mobile-menu__num">01</span>Про нас</a></li>
+          <li><a class="mobile-menu__link" href="#services"><span class="mobile-menu__num">02</span>Послуги</a></li>
+          <li><a class="mobile-menu__link" href="#portfolio"><span class="mobile-menu__num">03</span>Роботи</a></li>
+          <li><a class="mobile-menu__link" href="#masters"><span class="mobile-menu__num">04</span>Майстри</a></li>
+          <li><a class="mobile-menu__link" href="#reviews"><span class="mobile-menu__num">05</span>Відгуки</a></li>
+          <li><a class="mobile-menu__link" href="#contacts"><span class="mobile-menu__num">06</span>Контакти</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__footer">
+        <a class="btn btn--primary" href="#booking"><span class="btn__label">Записатися онлайн</span></a>
+        <a class="mobile-menu__phone" href="tel:+380441234567">+380 44 123 45 67</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- 3. Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <img class="hero__poster" src="assets/videos/hero-poster-sm.webp"
+             srcset="assets/videos/hero-poster-sm.webp 800w, assets/videos/hero-poster.webp 1600w" sizes="100vw"
+             width="1600" height="900" alt="" fetchpriority="high" decoding="async">
+        <video class="hero__video" muted autoplay loop playsinline preload="none"
+               data-src="assets/videos/hero.mp4" data-src-sm="assets/videos/hero-sm.mp4"
+               aria-hidden="true" tabindex="-1"></video>
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__content container">
+        <p class="eyebrow eyebrow--light hero__eyebrow">Студія манікюру та краси · Київ</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__line"><span>Ваші руки —</span></span>
+          <span class="hero__line"><span>наше</span> <span><em>мистецтво</em></span></span>
+        </h1>
+        <p class="hero__text">Преміальний манікюр, педикюр і авторський nail-дизайн. Стерильність медичного рівня, люксові матеріали та майстри, яким довіряють.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg magnetic" href="#booking">
+            <span class="btn__label">Записатися онлайн</span>
+            <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn--glass btn--lg magnetic" href="#services">
+            <span class="btn__label">Послуги та ціни</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__bottom container">
+        <div class="hero__rating">
+          <span class="hero__stars" aria-hidden="true">
+            <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+          </span>
+          <span><strong>4.9</strong> · 640+ відгуків</span>
+        </div>
+        <a class="hero__scroll" href="#about" aria-label="Гортайте до розділу Про нас">
+          <span class="hero__scroll-line"></span>
+          <span>Гортайте</span>
+        </a>
+        <p class="hero__hours">Щодня з 9:00 до 21:00</p>
+      </div>
+    </section>
+
+    <!-- Рядок, що біжить -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Манікюр</span><i></i><span>Педикюр</span><i></i><span><em>Nail-art</em></span><i></i><span>SPA-догляд</span><i></i><span>Нарощування</span><i></i><span><em>Парафінотерапія</em></span><i></i>
+        <span>Манікюр</span><i></i><span>Педикюр</span><i></i><span><em>Nail-art</em></span><i></i><span>SPA-догляд</span><i></i><span>Нарощування</span><i></i><span><em>Парафінотерапія</em></span><i></i>
+      </div>
+    </div>
+
+    <!-- 4. Про салон -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__media">
+          <figure class="about__img about__img--main" data-reveal="clip">
+            <img data-parallax src="assets/images/about-master-sm.webp"
+                 srcset="assets/images/about-master-sm.webp 800w, assets/images/about-master.webp 1600w"
+                 sizes="(min-width: 1024px) 45vw, 92vw" width="1600" height="1068"
+                 alt="Майстер робить манікюр клієнтці у світлій студії" loading="lazy" decoding="async">
+          </figure>
+          <figure class="about__img about__img--small" data-reveal="up" data-delay="0.2">
+            <img data-parallax="0.6" src="assets/images/about-interior-sm.webp"
+                 srcset="assets/images/about-interior-sm.webp 800w, assets/images/about-interior.webp 1600w"
+                 sizes="(min-width: 1024px) 22vw, 50vw" width="1600" height="1068"
+                 alt="Світлий кабінет студії з кушеткою та декором" loading="lazy" decoding="async">
+          </figure>
+          <div class="about__badge" data-reveal="scale" data-delay="0.35" role="img" aria-label="Працюємо з 2018 року">
+            <svg class="about__badge-ring" viewBox="0 0 100 100" aria-hidden="true">
+              <defs><path id="badge-circle" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1 -76 0"/></defs>
+              <text><textPath href="#badge-circle" textLength="232" lengthAdjust="spacing">Violette · beauty studio · з 2018 ·</textPath></text>
+            </svg>
+            <span class="about__badge-mono" aria-hidden="true">V</span>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <p class="eyebrow" data-reveal="fade"><span class="eyebrow__num">01</span>Про студію</p>
+          <h2 class="section-title" id="about-title" data-split="words">
+            Простір, де турбота стає <em>ритуалом</em>
+          </h2>
+          <p class="lead" data-reveal="up">
+            Violette — це камерна студія в самому центрі Києва, де кожна процедура починається з чашки трав'яного чаю і закінчується бездоганним результатом.
+          </p>
+          <p class="text" data-reveal="up" data-delay="0.1">
+            Ми працюємо лише з преміальними матеріалами, стерилізуємо інструменти у три етапи та відкриваємо крафт-пакети при вас. Наші майстри щороку проходять навчання у провідних шкіл Європи, тож ви отримуєте не просто манікюр, а сучасний догляд, що тримається тижнями.
+          </p>
+
+          <ul class="stats" role="list">
+            <li class="stats__item" data-reveal="up" data-delay="0.05">
+              <span class="stats__value"><span data-count="8">8</span></span>
+              <span class="stats__label">років роботи</span>
+            </li>
+            <li class="stats__item" data-reveal="up" data-delay="0.15">
+              <span class="stats__value"><span data-count="12500">12 500</span>+</span>
+              <span class="stats__label">задоволених клієнтів</span>
+            </li>
+            <li class="stats__item" data-reveal="up" data-delay="0.25">
+              <span class="stats__value"><span data-count="9">9</span></span>
+              <span class="stats__label">майстрів у команді</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Відео-акцент -->
+    <section class="showreel" aria-label="Атмосфера студії">
+      <div class="showreel__frame" data-showreel>
+        <img class="showreel__poster" src="assets/videos/care-poster.webp" width="1280" height="720" alt="" loading="lazy" decoding="async">
+        <video class="showreel__video" muted loop playsinline preload="none" data-src="assets/videos/care.mp4" aria-hidden="true" tabindex="-1"></video>
+        <div class="showreel__overlay"></div>
+        <p class="showreel__text" data-split="words">Кожна деталь <em>має значення</em></p>
+      </div>
+    </section>
+
+    <!-- 5. Послуги та ціни -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal="fade"><span class="eyebrow__num">02</span>Послуги</p>
+          <h2 class="section-title" id="services-title" data-split="words">Послуги та <em>ціни</em></h2>
+          <p class="section-head__text" data-reveal="up">Прозорі ціни без прихованих доплат. Вартість дизайну залежить від складності — майстер узгодить її з вами до початку роботи.</p>
+        </div>
+
+        <div class="services__layout">
+          <div class="services__main">
+            <div class="tabs" role="tablist" aria-label="Категорії послуг" data-reveal="up">
+              <button class="tabs__btn is-active" role="tab" id="tab-manicure" aria-selected="true" aria-controls="panel-manicure" data-tab="manicure">Манікюр</button>
+              <button class="tabs__btn" role="tab" id="tab-pedicure" aria-selected="false" aria-controls="panel-pedicure" data-tab="pedicure" tabindex="-1">Педикюр</button>
+              <button class="tabs__btn" role="tab" id="tab-design" aria-selected="false" aria-controls="panel-design" data-tab="design" tabindex="-1">Дизайн нігтів</button>
+              <button class="tabs__btn" role="tab" id="tab-care" aria-selected="false" aria-controls="panel-care" data-tab="care" tabindex="-1">Догляд</button>
+              <span class="tabs__indicator" aria-hidden="true"></span>
+            </div>
+
+            <div class="services__panels" data-reveal="up" data-delay="0.1">
+              <div class="price-list is-active" role="tabpanel" id="panel-manicure" aria-labelledby="tab-manicure" data-category="manicure" data-label="Манікюр">
+                <article class="price-item" data-service="Класичний манікюр" data-price="450" data-duration="60">
+                  <div class="price-item__info"><h3 class="price-item__name">Класичний манікюр</h3><p class="price-item__desc">Обрізний або комбінований, з покриттям звичайним лаком</p></div>
+                  <span class="price-item__time">60 хв</span><span class="price-item__price">450 ₴</span>
+                </article>
+                <article class="price-item" data-service="Манікюр з гель-лаком" data-price="750" data-duration="90">
+                  <div class="price-item__info"><h3 class="price-item__name">Манікюр з гель-лаком</h3><p class="price-item__desc">Вирівнювання, однотонне покриття, стійкість до 4 тижнів</p></div>
+                  <span class="price-item__time">90 хв</span><span class="price-item__price">750 ₴</span>
+                </article>
+                <article class="price-item" data-service="Зміцнення гелем" data-price="950" data-duration="120">
+                  <div class="price-item__info"><h3 class="price-item__name">Зміцнення гелем</h3><p class="price-item__desc">Для тонких і ламких нігтів, ідеальна архітектура</p></div>
+                  <span class="price-item__time">120 хв</span><span class="price-item__price">950 ₴</span>
+                </article>
+                <article class="price-item" data-service="Нарощування нігтів" data-price="1400" data-duration="180">
+                  <div class="price-item__info"><h3 class="price-item__name">Нарощування нігтів</h3><p class="price-item__desc">На верхні форми, будь-яка довжина та форма</p></div>
+                  <span class="price-item__time">180 хв</span><span class="price-item__price">1 400 ₴</span>
+                </article>
+                <article class="price-item" data-service="Чоловічий манікюр" data-price="450" data-duration="45">
+                  <div class="price-item__info"><h3 class="price-item__name">Чоловічий манікюр</h3><p class="price-item__desc">Охайна форма, обробка кутикули, матове покриття за бажанням</p></div>
+                  <span class="price-item__time">45 хв</span><span class="price-item__price">450 ₴</span>
+                </article>
+                <article class="price-item" data-service="Зняття покриття" data-price="150" data-duration="20">
+                  <div class="price-item__info"><h3 class="price-item__name">Зняття покриття</h3><p class="price-item__desc">Делікатне апаратне зняття без пошкодження нігтя</p></div>
+                  <span class="price-item__time">20 хв</span><span class="price-item__price">150 ₴</span>
+                </article>
+              </div>
+
+              <div class="price-list" role="tabpanel" id="panel-pedicure" aria-labelledby="tab-pedicure" data-category="pedicure" data-label="Педикюр" hidden>
+                <article class="price-item" data-service="Класичний педикюр" data-price="650" data-duration="60">
+                  <div class="price-item__info"><h3 class="price-item__name">Класичний педикюр</h3><p class="price-item__desc">Ванночка, обробка стоп і пальчиків, покриття лаком</p></div>
+                  <span class="price-item__time">60 хв</span><span class="price-item__price">650 ₴</span>
+                </article>
+                <article class="price-item" data-service="Педикюр з гель-лаком" data-price="900" data-duration="90">
+                  <div class="price-item__info"><h3 class="price-item__name">Педикюр з гель-лаком</h3><p class="price-item__desc">Повна обробка стоп і стійке покриття до 6 тижнів</p></div>
+                  <span class="price-item__time">90 хв</span><span class="price-item__price">900 ₴</span>
+                </article>
+                <article class="price-item" data-service="Апаратний педикюр" data-price="850" data-duration="75">
+                  <div class="price-item__info"><h3 class="price-item__name">Апаратний педикюр</h3><p class="price-item__desc">Суха техніка, ідеально для чутливої шкіри</p></div>
+                  <span class="price-item__time">75 хв</span><span class="price-item__price">850 ₴</span>
+                </article>
+                <article class="price-item" data-service="SMART-педикюр" data-price="1000" data-duration="90">
+                  <div class="price-item__info"><h3 class="price-item__name">SMART-педикюр</h3><p class="price-item__desc">Одноразові диски, м'яке шліфування, ефект до 4 тижнів</p></div>
+                  <span class="price-item__time">90 хв</span><span class="price-item__price">1 000 ₴</span>
+                </article>
+                <article class="price-item" data-service="Подологічний догляд" data-price="900" data-duration="60">
+                  <div class="price-item__info"><h3 class="price-item__name">Подологічний догляд</h3><p class="price-item__desc">Робота з вростаючим нігтем, тріщинами та мозолями</p></div>
+                  <span class="price-item__time">60 хв</span><span class="price-item__price">900 ₴</span>
+                </article>
+              </div>
+
+              <div class="price-list" role="tabpanel" id="panel-design" aria-labelledby="tab-design" data-category="design" data-label="Дизайн нігтів" hidden>
+                <article class="price-item" data-service="Френч або місячний манікюр" data-price="200" data-duration="20">
+                  <div class="price-item__info"><h3 class="price-item__name">Френч або місячний манікюр</h3><p class="price-item__desc">Класика, тонка лінія або градієнт, усі нігті</p></div>
+                  <span class="price-item__time">20 хв</span><span class="price-item__price">200 ₴</span>
+                </article>
+                <article class="price-item" data-service="Втирка, металік, хром" data-price="150" data-duration="15">
+                  <div class="price-item__info"><h3 class="price-item__name">Втирка, металік, хром</h3><p class="price-item__desc">Дзеркальний або перламутровий ефект, усі нігті</p></div>
+                  <span class="price-item__time">15 хв</span><span class="price-item__price">150 ₴</span>
+                </article>
+                <article class="price-item" data-service="Ручний розпис" data-price="80" data-duration="15">
+                  <div class="price-item__info"><h3 class="price-item__name">Ручний розпис</h3><p class="price-item__desc">Квіти, лінії, мінімалізм — ціна за 1 ніготь</p></div>
+                  <span class="price-item__time">15 хв</span><span class="price-item__price">80 ₴</span>
+                </article>
+                <article class="price-item" data-service="Стемпінг або слайдери" data-price="150" data-duration="20">
+                  <div class="price-item__info"><h3 class="price-item__name">Стемпінг або слайдери</h3><p class="price-item__desc">Швидкий спосіб додати візерунок, усі нігті</p></div>
+                  <span class="price-item__time">20 хв</span><span class="price-item__price">150 ₴</span>
+                </article>
+                <article class="price-item" data-service="Інкрустація стразами" data-price="200" data-duration="20">
+                  <div class="price-item__info"><h3 class="price-item__name">Інкрустація стразами</h3><p class="price-item__desc">Кристали, бульйонки, фольга — до 4 нігтів</p></div>
+                  <span class="price-item__time">20 хв</span><span class="price-item__price">200 ₴</span>
+                </article>
+                <article class="price-item" data-service="Авторський дизайн" data-price="500" data-duration="45">
+                  <div class="price-item__info"><h3 class="price-item__name">Авторський дизайн</h3><p class="price-item__desc">Індивідуальна ідея, яку ми створимо разом з вами</p></div>
+                  <span class="price-item__time">45 хв</span><span class="price-item__price">від 500 ₴</span>
+                </article>
+              </div>
+
+              <div class="price-list" role="tabpanel" id="panel-care" aria-labelledby="tab-care" data-category="care" data-label="Догляд" hidden>
+                <article class="price-item" data-service="Парафінотерапія рук" data-price="350" data-duration="30">
+                  <div class="price-item__info"><h3 class="price-item__name">Парафінотерапія рук</h3><p class="price-item__desc">Глибоке зволоження та відновлення шкіри</p></div>
+                  <span class="price-item__time">30 хв</span><span class="price-item__price">350 ₴</span>
+                </article>
+                <article class="price-item" data-service="SPA-догляд для рук" data-price="500" data-duration="45">
+                  <div class="price-item__info"><h3 class="price-item__name">SPA-догляд для рук</h3><p class="price-item__desc">Пілінг, маска, масаж з ароматичними оліями</p></div>
+                  <span class="price-item__time">45 хв</span><span class="price-item__price">500 ₴</span>
+                </article>
+                <article class="price-item" data-service="Масаж рук" data-price="300" data-duration="20">
+                  <div class="price-item__info"><h3 class="price-item__name">Масаж рук</h3><p class="price-item__desc">Розслаблює м'язи та покращує кровообіг</p></div>
+                  <span class="price-item__time">20 хв</span><span class="price-item__price">300 ₴</span>
+                </article>
+                <article class="price-item" data-service="Пілінг і маска для стоп" data-price="450" data-duration="40">
+                  <div class="price-item__info"><h3 class="price-item__name">Пілінг і маска для стоп</h3><p class="price-item__desc">М'якість і легкість після першої процедури</p></div>
+                  <span class="price-item__time">40 хв</span><span class="price-item__price">450 ₴</span>
+                </article>
+                <article class="price-item" data-service="Японський манікюр P.Shine" data-price="550" data-duration="45">
+                  <div class="price-item__info"><h3 class="price-item__name">Японський манікюр P.Shine</h3><p class="price-item__desc">Натуральний блиск і зміцнення без покриття</p></div>
+                  <span class="price-item__time">45 хв</span><span class="price-item__price">550 ₴</span>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <aside class="services__aside" data-reveal="right">
+            <div class="services__visual">
+              <img class="services__img is-active" data-tab-img="manicure" src="assets/images/mani-1-sm.webp" width="700" height="1118" alt="Ніжно-рожевий манікюр на мигдалевих нігтях" loading="lazy" decoding="async">
+              <img class="services__img" data-tab-img="pedicure" src="assets/images/pedi-1-sm.webp" width="700" height="468" alt="SPA-педикюр: стопи у ванночці з квітами" loading="lazy" decoding="async">
+              <img class="services__img" data-tab-img="design" src="assets/images/design-1-sm.webp" width="700" height="1244" alt="Френч з фіолетовим мармуровим ефектом" loading="lazy" decoding="async">
+              <img class="services__img" data-tab-img="care" src="assets/images/care-1-sm.webp" width="700" height="1050" alt="Майстер робить масаж рук" loading="lazy" decoding="async">
+            </div>
+            <div class="services__note">
+              <p>Не знаєте, що обрати? Майстер безкоштовно проконсультує вас перед процедурою.</p>
+              <a class="link-arrow" href="#booking">Записатися <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Портфоліо -->
+    <section class="section portfolio" id="portfolio" aria-labelledby="portfolio-title">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <p class="eyebrow" data-reveal="fade"><span class="eyebrow__num">03</span>Портфоліо</p>
+            <h2 class="section-title" id="portfolio-title" data-split="words">Наші <em>роботи</em></h2>
+          </div>
+          <div class="filters" role="group" aria-label="Фільтр робіт" data-reveal="left">
+            <button class="filters__btn is-active" type="button" data-filter="all" aria-pressed="true">Усі</button>
+            <button class="filters__btn" type="button" data-filter="manicure" aria-pressed="false">Манікюр</button>
+            <button class="filters__btn" type="button" data-filter="pedicure" aria-pressed="false">Педикюр</button>
+            <button class="filters__btn" type="button" data-filter="design" aria-pressed="false">Дизайн</button>
+            <button class="filters__btn" type="button" data-filter="care" aria-pressed="false">Догляд</button>
+          </div>
+        </div>
+
+        <ul class="gallery" role="list">
+          <li class="gallery__item gallery__item--tall" data-cat="design">
+            <a class="gallery__link" href="assets/images/design-1.webp" data-caption="Френч з фіолетовим мармуром">
+              <img src="assets/images/design-1-sm.webp" width="700" height="1244" alt="Френч з фіолетовим мармуровим ефектом на мигдалевих нігтях" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Дизайн</span><span class="gallery__title">Френч з мармуром</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--wide" data-cat="manicure">
+            <a class="gallery__link" href="assets/images/mani-2.webp" data-caption="Молочний нюд">
+              <img src="assets/images/mani-2-sm.webp" width="700" height="466" alt="Манікюр у молочному нюдовому відтінку" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Манікюр</span><span class="gallery__title">Молочний нюд</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--wide" data-cat="pedicure">
+            <a class="gallery__link" href="assets/images/pedi-1.webp" data-caption="SPA-педикюр з ванночкою">
+              <img src="assets/images/pedi-1-sm.webp" width="700" height="468" alt="Стопи у ванночці з квітами орхідеї" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Педикюр</span><span class="gallery__title">SPA-педикюр</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--tall" data-cat="design">
+            <a class="gallery__link" href="assets/images/design-2.webp" data-caption="Хром та інкрустація">
+              <img src="assets/images/design-2-sm.webp" width="700" height="850" alt="Довгі нігті з хромом, розписом і кристалами" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Дизайн</span><span class="gallery__title">Хром та інкрустація</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--tall" data-cat="manicure">
+            <a class="gallery__link" href="assets/images/mani-1.webp" data-caption="Ніжно-рожевий гель-лак">
+              <img src="assets/images/mani-1-sm.webp" width="700" height="1118" alt="Ніжно-рожевий гель-лак на мигдалевих нігтях" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Манікюр</span><span class="gallery__title">Ніжно-рожевий</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--tall" data-cat="care">
+            <a class="gallery__link" href="assets/images/care-1.webp" data-caption="Масаж рук">
+              <img src="assets/images/care-1-sm.webp" width="700" height="1050" alt="Майстер робить розслаблюючий масаж рук" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Догляд</span><span class="gallery__title">Масаж рук</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--square" data-cat="design">
+            <a class="gallery__link" href="assets/images/design-3.webp" data-caption="Мокко з глітером">
+              <img src="assets/images/design-3-sm.webp" width="700" height="700" alt="Манікюр мокко з білими та срібними глітерними нігтями" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Дизайн</span><span class="gallery__title">Мокко з глітером</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--wide" data-cat="pedicure">
+            <a class="gallery__link" href="assets/images/pedi-2.webp" data-caption="Обробка стоп">
+              <img src="assets/images/pedi-2-sm.webp" width="700" height="468" alt="Майстер обробляє стопу клієнтки над чашею з водою" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Педикюр</span><span class="gallery__title">Обробка стоп</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--tall" data-cat="manicure">
+            <a class="gallery__link" href="assets/images/mani-3.webp" data-caption="Пудровий рожевий">
+              <img src="assets/images/mani-3-sm.webp" width="700" height="934" alt="Пудровий рожевий манікюр на тлі білої тканини" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Манікюр</span><span class="gallery__title">Пудровий рожевий</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--wide" data-cat="care">
+            <a class="gallery__link" href="assets/images/care-3.webp" data-caption="Живильний крем для рук">
+              <img src="assets/images/care-3-sm.webp" width="700" height="466" alt="Нанесення живильного крему на руку" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Догляд</span><span class="gallery__title">Живильний крем</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--tall" data-cat="manicure">
+            <a class="gallery__link" href="assets/images/mani-4.webp" data-caption="Білий гель-лак">
+              <img src="assets/images/mani-4-sm.webp" width="700" height="876" alt="Білий гель-лак на квадратних нігтях" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Манікюр</span><span class="gallery__title">Білий гель-лак</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--tall" data-cat="design">
+            <a class="gallery__link" href="assets/images/design-4.webp" data-caption="Френч з блиском">
+              <img src="assets/images/design-4-sm.webp" width="700" height="1244" alt="Френч на мигдалевих нігтях із глітерними акцентами" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Дизайн</span><span class="gallery__title">Френч з блиском</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--wide" data-cat="pedicure">
+            <a class="gallery__link" href="assets/images/pedi-3.webp" data-caption="Яскравий педикюр">
+              <img src="assets/images/pedi-3-sm.webp" width="700" height="464" alt="Педикюр з яскраво-рожевим покриттям" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Педикюр</span><span class="gallery__title">Яскравий педикюр</span></span>
+            </a>
+          </li>
+          <li class="gallery__item gallery__item--tall" data-cat="care">
+            <a class="gallery__link" href="assets/images/care-2.webp" data-caption="Підбір домашнього догляду">
+              <img src="assets/images/care-2-sm.webp" width="700" height="1058" alt="Зразки кремів для догляду на руці" loading="lazy" decoding="async">
+              <span class="gallery__meta"><span class="gallery__cat">Догляд</span><span class="gallery__title">Домашній догляд</span></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7. Майстри -->
+    <section class="section masters" id="masters" aria-labelledby="masters-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" data-reveal="fade"><span class="eyebrow__num">04</span>Команда</p>
+          <h2 class="section-title" id="masters-title" data-split="words">Майстри, яким <em>довіряють</em></h2>
+        </div>
+
+        <ul class="masters__grid" role="list">
+          <li class="master" data-reveal="up" data-delay="0">
+            <div class="master__photo">
+              <img src="assets/images/master-1-sm.webp" srcset="assets/images/master-1-sm.webp 450w, assets/images/master-1.webp 900w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 88vw" width="900" height="1126" alt="Портрет майстра Олени Коваль" loading="lazy" decoding="async">
+              <button class="master__book" type="button" data-master="Олена Коваль">Записатися до Олени</button>
+            </div>
+            <h3 class="master__name">Олена Коваль</h3>
+            <p class="master__role">Топ-майстер, засновниця студії</p>
+            <p class="master__exp">9 років досвіду</p>
+          </li>
+          <li class="master master--offset" data-reveal="up" data-delay="0.1">
+            <div class="master__photo">
+              <img src="assets/images/master-2-sm.webp" srcset="assets/images/master-2-sm.webp 450w, assets/images/master-2.webp 900w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 88vw" width="900" height="1126" alt="Портрет майстра Марії Ткаченко" loading="lazy" decoding="async">
+              <button class="master__book" type="button" data-master="Марія Ткаченко">Записатися до Марії</button>
+            </div>
+            <h3 class="master__name">Марія Ткаченко</h3>
+            <p class="master__role">Майстер манікюру та педикюру</p>
+            <p class="master__exp">6 років досвіду</p>
+          </li>
+          <li class="master" data-reveal="up" data-delay="0.2">
+            <div class="master__photo">
+              <img src="assets/images/master-3-sm.webp" srcset="assets/images/master-3-sm.webp 450w, assets/images/master-3.webp 900w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 88vw" width="900" height="1126" alt="Портрет майстра Софії Мельник" loading="lazy" decoding="async">
+              <button class="master__book" type="button" data-master="Софія Мельник">Записатися до Софії</button>
+            </div>
+            <h3 class="master__name">Софія Мельник</h3>
+            <p class="master__role">Nail-artist, авторський розпис</p>
+            <p class="master__exp">5 років досвіду</p>
+          </li>
+          <li class="master master--offset" data-reveal="up" data-delay="0.3">
+            <div class="master__photo">
+              <img src="assets/images/master-4-sm.webp" srcset="assets/images/master-4-sm.webp 450w, assets/images/master-4.webp 900w" sizes="(min-width: 1024px) 24vw, (min-width: 640px) 45vw, 88vw" width="900" height="1126" alt="Портрет майстра Анни Бондар" loading="lazy" decoding="async">
+              <button class="master__book" type="button" data-master="Анна Бондар">Записатися до Анни</button>
+            </div>
+            <h3 class="master__name">Анна Бондар</h3>
+            <p class="master__role">Подолог, майстер педикюру</p>
+            <p class="master__exp">7 років досвіду</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 8. Онлайн-запис -->
+    <section class="section booking" id="booking" aria-labelledby="booking-title">
+      <div class="container booking__grid">
+        <div class="booking__intro">
+          <p class="eyebrow" data-reveal="fade"><span class="eyebrow__num">05</span>Онлайн-запис</p>
+          <h2 class="section-title" id="booking-title" data-split="words">Запис за <em>хвилину</em></h2>
+          <p class="text" data-reveal="up">Оберіть послугу, майстра та зручний час. Адміністратор підтвердить запис протягом 15 хвилин.</p>
+          <figure class="booking__img" data-reveal="clip">
+            <img data-parallax src="assets/images/booking-polish-sm.webp" srcset="assets/images/booking-polish-sm.webp 700w, assets/images/booking-polish.webp 1400w" sizes="(min-width: 1024px) 34vw, 92vw" width="1400" height="2102" alt="Флакони лаку в пудрових і ягідних відтінках" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <div class="booking__card" data-reveal="up">
+          <form class="booking-form" id="booking-form" novalidate>
+            <div class="progress">
+              <ol class="progress__steps" role="list">
+                <li class="progress__step is-active" data-step-label="1"><span class="progress__dot">1</span><span class="progress__name">Послуга</span></li>
+                <li class="progress__step" data-step-label="2"><span class="progress__dot">2</span><span class="progress__name">Майстер</span></li>
+                <li class="progress__step" data-step-label="3"><span class="progress__dot">3</span><span class="progress__name">Дата і час</span></li>
+                <li class="progress__step" data-step-label="4"><span class="progress__dot">4</span><span class="progress__name">Контакти</span></li>
+              </ol>
+              <div class="progress__bar" role="progressbar" aria-label="Прогрес запису" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1">
+                <span class="progress__fill"></span>
+              </div>
+            </div>
+
+            <div class="booking-form__steps">
+              <!-- Крок 1 -->
+              <fieldset class="form-step is-active" data-step="1">
+                <legend class="form-step__title">Оберіть послугу</legend>
+                <div class="chips" role="radiogroup" aria-label="Категорія" data-booking-categories></div>
+                <div class="options" data-booking-services></div>
+                <p class="form-error" role="alert" data-error="1"></p>
+              </fieldset>
+
+              <!-- Крок 2 -->
+              <fieldset class="form-step" data-step="2" hidden>
+                <legend class="form-step__title">Оберіть майстра</legend>
+                <div class="options options--masters">
+                  <label class="option option--master">
+                    <input type="radio" name="master" value="Будь-який вільний майстер">
+                    <span class="option__avatar option__avatar--any" aria-hidden="true">✦</span>
+                    <span class="option__body"><span class="option__name">Будь-який майстер</span><span class="option__meta">Найближчий вільний час</span></span>
+                  </label>
+                  <label class="option option--master">
+                    <input type="radio" name="master" value="Олена Коваль">
+                    <img class="option__avatar" src="assets/images/master-1-sm.webp" width="450" height="562" alt="" loading="lazy">
+                    <span class="option__body"><span class="option__name">Олена Коваль</span><span class="option__meta">Топ-майстер</span></span>
+                  </label>
+                  <label class="option option--master">
+                    <input type="radio" name="master" value="Марія Ткаченко">
+                    <img class="option__avatar" src="assets/images/master-2-sm.webp" width="450" height="562" alt="" loading="lazy">
+                    <span class="option__body"><span class="option__name">Марія Ткаченко</span><span class="option__meta">Манікюр і педикюр</span></span>
+                  </label>
+                  <label class="option option--master">
+                    <input type="radio" name="master" value="Софія Мельник">
+                    <img class="option__avatar" src="assets/images/master-3-sm.webp" width="450" height="562" alt="" loading="lazy">
+                    <span class="option__body"><span class="option__name">Софія Мельник</span><span class="option__meta">Nail-art</span></span>
+                  </label>
+                  <label class="option option--master">
+                    <input type="radio" name="master" value="Анна Бондар">
+                    <img class="option__avatar" src="assets/images/master-4-sm.webp" width="450" height="562" alt="" loading="lazy">
+                    <span class="option__body"><span class="option__name">Анна Бондар</span><span class="option__meta">Подолог</span></span>
+                  </label>
+                </div>
+                <p class="form-error" role="alert" data-error="2"></p>
+              </fieldset>
+
+              <!-- Крок 3 -->
+              <fieldset class="form-step" data-step="3" hidden>
+                <legend class="form-step__title">Оберіть дату і час</legend>
+                <div class="dates" role="radiogroup" aria-label="Дата" data-booking-dates></div>
+                <p class="slots__label">Вільний час</p>
+                <div class="slots" role="radiogroup" aria-label="Час" data-booking-times></div>
+                <p class="form-error" role="alert" data-error="3"></p>
+              </fieldset>
+
+              <!-- Крок 4 -->
+              <fieldset class="form-step" data-step="4" hidden>
+                <legend class="form-step__title">Ваші контакти</legend>
+                <div class="field">
+                  <input class="field__input" type="text" id="bf-name" name="name" autocomplete="given-name" placeholder=" " required minlength="2">
+                  <label class="field__label" for="bf-name">Ім'я</label>
+                  <span class="field__error" id="bf-name-error"></span>
+                </div>
+                <div class="field">
+                  <input class="field__input" type="tel" id="bf-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder=" " required>
+                  <label class="field__label" for="bf-phone">Телефон</label>
+                  <span class="field__error" id="bf-phone-error"></span>
+                </div>
+                <div class="field">
+                  <textarea class="field__input field__input--area" id="bf-comment" name="comment" rows="2" placeholder=" "></textarea>
+                  <label class="field__label" for="bf-comment">Коментар (необов'язково)</label>
+                </div>
+                <label class="checkbox">
+                  <input type="checkbox" name="consent" id="bf-consent" required>
+                  <span class="checkbox__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+                  <span>Погоджуюсь на обробку персональних даних</span>
+                </label>
+                <p class="form-error" role="alert" data-error="4"></p>
+              </fieldset>
+            </div>
+
+            <div class="booking-form__summary" data-booking-summary aria-live="polite"></div>
+
+            <div class="booking-form__nav">
+              <button class="btn btn--ghost" type="button" data-prev hidden>
+                <svg class="btn__icon btn__icon--left" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+                <span class="btn__label">Назад</span>
+              </button>
+              <button class="btn btn--primary" type="button" data-next>
+                <span class="btn__label">Далі</span>
+                <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </button>
+              <button class="btn btn--primary" type="submit" data-submit hidden>
+                <span class="btn__label">Підтвердити запис</span>
+              </button>
+            </div>
+          </form>
+
+          <div class="booking-success" data-booking-success hidden tabindex="-1">
+            <div class="booking-success__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><circle class="booking-success__circle" cx="32" cy="32" r="30"/><path class="booking-success__check" d="M20 33l8 8 16-17"/></svg>
+            </div>
+            <h3 class="booking-success__title">Ви записані!</h3>
+            <p class="booking-success__text" data-success-text></p>
+            <p class="booking-success__note">Це демо-форма: дані нікуди не надсилаються.</p>
+            <button class="btn btn--ghost" type="button" data-booking-reset><span class="btn__label">Новий запис</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Відгуки -->
+    <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <p class="eyebrow" data-reveal="fade"><span class="eyebrow__num">06</span>Відгуки</p>
+            <h2 class="section-title" id="reviews-title" data-split="words">Що кажуть <em>клієнтки</em></h2>
+          </div>
+          <div class="slider-nav" data-reveal="left">
+            <button class="slider-nav__btn" type="button" data-slider-prev aria-label="Попередній відгук"><svg aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+            <button class="slider-nav__btn" type="button" data-slider-next aria-label="Наступний відгук"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+
+        <div class="slider" data-slider data-reveal="up">
+          <div class="slider__viewport">
+            <ul class="slider__track" role="list">
+              <li class="review">
+                <div class="review__stars" role="img" aria-label="Оцінка 5 з 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+                <blockquote class="review__text">«Найкращий манікюр у моєму житті. Покриття тримається вже четвертий тиждень, ані сколу. А ще тут неймовірно затишно — не хотілося йти.»</blockquote>
+                <div class="review__author"><span class="review__avatar" aria-hidden="true">ІШ</span><span><strong>Ірина Шевчук</strong><span class="review__service">Манікюр з гель-лаком</span></span></div>
+              </li>
+              <li class="review">
+                <div class="review__stars" role="img" aria-label="Оцінка 5 з 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+                <blockquote class="review__text">«Софія — справжня художниця. Показала їй картинку з Pinterest, а вийшло ще краще за оригінал. Отримую компліменти щодня.»</blockquote>
+                <div class="review__author"><span class="review__avatar" aria-hidden="true">ДК</span><span><strong>Дарина Кравець</strong><span class="review__service">Авторський дизайн</span></span></div>
+              </li>
+              <li class="review">
+                <div class="review__stars" role="img" aria-label="Оцінка 5 з 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+                <blockquote class="review__text">«Ходжу до Анни на подологічний педикюр уже пів року. Проблема з вростаючим нігтем пішла, і нарешті можу носити відкрите взуття.»</blockquote>
+                <div class="review__author"><span class="review__avatar" aria-hidden="true">ОЛ</span><span><strong>Оксана Литвиненко</strong><span class="review__service">Подологічний догляд</span></span></div>
+              </li>
+              <li class="review">
+                <div class="review__stars" role="img" aria-label="Оцінка 5 з 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+                <blockquote class="review__text">«Окремо дякую за стерильність: крафт-пакет відкрили при мені, все пояснили. Для мене це найважливіше. Плюс дуже зручний онлайн-запис.»</blockquote>
+                <div class="review__author"><span class="review__avatar" aria-hidden="true">ВП</span><span><strong>Вікторія Павленко</strong><span class="review__service">SMART-педикюр</span></span></div>
+              </li>
+              <li class="review">
+                <div class="review__stars" role="img" aria-label="Оцінка 5 з 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+                <blockquote class="review__text">«Подарувала мамі сертифікат на SPA-догляд для рук — вона в захваті. Тепер ходимо разом раз на місяць, це наш маленький ритуал.»</blockquote>
+                <div class="review__author"><span class="review__avatar" aria-hidden="true">АС</span><span><strong>Аліна Савчук</strong><span class="review__service">SPA-догляд для рук</span></span></div>
+              </li>
+              <li class="review">
+                <div class="review__stars" role="img" aria-label="Оцінка 5 з 5"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+                <blockquote class="review__text">«Робила нарощування перед весіллям. Олена підібрала ідеальну форму і довжину, нігті виглядали дуже природно на всіх фото.»</blockquote>
+                <div class="review__author"><span class="review__avatar" aria-hidden="true">ЮМ</span><span><strong>Юлія Мороз</strong><span class="review__service">Нарощування нігтів</span></span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="slider__dots" data-slider-dots></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FAQ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <div class="faq__intro">
+          <p class="eyebrow" data-reveal="fade"><span class="eyebrow__num">07</span>FAQ</p>
+          <h2 class="section-title" id="faq-title" data-split="words">Часті <em>питання</em></h2>
+          <p class="text" data-reveal="up">Не знайшли відповідь? Напишіть нам у Telegram — відповімо протягом кількох хвилин.</p>
+          <figure class="faq__img" data-reveal="clip">
+            <img data-parallax src="assets/images/faq-care-sm.webp" srcset="assets/images/faq-care-sm.webp 700w, assets/images/faq-care.webp 1400w" sizes="(min-width: 1024px) 34vw, 92vw" width="1400" height="934" alt="Догляд за шкірою рук з нефритовим ролером" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <div class="accordion" data-reveal="up">
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button class="accordion__btn" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-btn-1">
+                <span>Як підготуватися до манікюру?</span><span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-1" role="region" aria-labelledby="faq-btn-1" hidden>
+              <div class="accordion__content"><p>Спеціальна підготовка не потрібна. Якщо у вас є покриття з іншого салону — попередьте адміністратора, ми заплануємо додатковий час на зняття. Ідеї дизайну можна показати майстру прямо на процедурі.</p></div>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button class="accordion__btn" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">
+                <span>Скільки тримається покриття гель-лаком?</span><span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-2" role="region" aria-labelledby="faq-btn-2" hidden>
+              <div class="accordion__content"><p>У середньому 3–4 тижні на руках і до 6 тижнів на ногах. Якщо протягом 7 днів з'явиться скол чи відшарування — виправимо безкоштовно.</p></div>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button class="accordion__btn" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">
+                <span>Як ви стерилізуєте інструменти?</span><span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-3" role="region" aria-labelledby="faq-btn-3" hidden>
+              <div class="accordion__content"><p>Три етапи: дезінфекція, передстерилізаційне очищення в ультразвуковій мийці та стерилізація в сухожарі. Інструменти зберігаються в запечатаних крафт-пакетах з індикатором — ми відкриваємо їх при вас.</p></div>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button class="accordion__btn" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">
+                <span>Чи можна прийти зі своїм дизайном?</span><span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-4" role="region" aria-labelledby="faq-btn-4" hidden>
+              <div class="accordion__content"><p>Звісно! Надішліть фото референсу в Telegram заздалегідь — майстер оцінить складність і підкаже точну вартість та час.</p></div>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button class="accordion__btn" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-btn-5">
+                <span>Як скасувати або перенести запис?</span><span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-5" role="region" aria-labelledby="faq-btn-5" hidden>
+              <div class="accordion__content"><p>Напишіть або зателефонуйте нам щонайменше за 24 години до візиту. Так ми зможемо запропонувати ваш час іншим клієнтам.</p></div>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button class="accordion__btn" type="button" aria-expanded="false" aria-controls="faq-6" id="faq-btn-6">
+                <span>Чи є подарункові сертифікати?</span><span class="accordion__icon" aria-hidden="true"><svg><use href="#i-plus"/></svg></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-6" role="region" aria-labelledby="faq-btn-6" hidden>
+              <div class="accordion__content"><p>Так, на будь-яку суму від 500 ₴ або на конкретну послугу. Сертифікат діє 6 місяців, його можна отримати в студії в красивій упаковці або в електронному вигляді.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Контакти -->
+    <section class="section contacts" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contacts__grid">
+        <div class="contacts__info">
+          <p class="eyebrow" data-reveal="fade"><span class="eyebrow__num">08</span>Контакти</p>
+          <h2 class="section-title" id="contacts-title" data-split="words">Чекаємо на вас у <em>Violette</em></h2>
+
+          <ul class="contacts__list" role="list">
+            <li class="contacts__item" data-reveal="up">
+              <svg class="contacts__icon" aria-hidden="true"><use href="#i-pin"/></svg>
+              <div><p class="contacts__label">Адреса</p><p>вул. Фіалкова, 7, Київ<br><span class="muted">2 хв від метро «Арсенальна»</span></p></div>
+            </li>
+            <li class="contacts__item" data-reveal="up" data-delay="0.08">
+              <svg class="contacts__icon" aria-hidden="true"><use href="#i-clock"/></svg>
+              <div><p class="contacts__label">Години роботи</p><p>Пн–Пт: 9:00 – 21:00<br>Сб–Нд: 10:00 – 20:00</p></div>
+            </li>
+            <li class="contacts__item" data-reveal="up" data-delay="0.16">
+              <svg class="contacts__icon" aria-hidden="true"><use href="#i-phone"/></svg>
+              <div><p class="contacts__label">Телефон</p><p><a class="link" href="tel:+380441234567">+380 44 123 45 67</a></p></div>
+            </li>
+          </ul>
+
+          <div class="socials" data-reveal="up" data-delay="0.2">
+            <a class="social magnetic" href="#" data-demo-link="Telegram" aria-label="Написати в Telegram"><svg aria-hidden="true"><use href="#i-telegram"/></svg><span>Telegram</span></a>
+            <a class="social magnetic" href="#" data-demo-link="Instagram" aria-label="Відкрити Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg><span>Instagram</span></a>
+            <a class="social magnetic" href="#" data-demo-link="Viber" aria-label="Написати у Viber"><svg aria-hidden="true"><use href="#i-viber"/></svg><span>Viber</span></a>
+          </div>
+        </div>
+
+        <div class="contacts__map" data-reveal="clip">
+          <iframe title="Карта: розташування студії Violette у Києві"
+                  src="https://www.google.com/maps?q=%D0%90%D1%80%D1%81%D0%B5%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%2C%20%D0%9A%D0%B8%D1%97%D0%B2&z=15&hl=uk&output=embed"
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="logo logo--lg" href="#top" aria-label="Violette Beauty Studio — на початок сторінки">
+            <span class="logo__word">Violette</span>
+            <span class="logo__sub">beauty studio</span>
+          </a>
+          <p class="footer__tagline">Мистецтво доглянутих рук у самому серці Києва.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Навігація у футері">
+          <p class="footer__title">Студія</p>
+          <ul role="list">
+            <li><a class="link" href="#about">Про нас</a></li>
+            <li><a class="link" href="#masters">Майстри</a></li>
+            <li><a class="link" href="#reviews">Відгуки</a></li>
+            <li><a class="link" href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__nav" aria-label="Послуги у футері">
+          <p class="footer__title">Послуги</p>
+          <ul role="list">
+            <li><a class="link" href="#services">Манікюр</a></li>
+            <li><a class="link" href="#services">Педикюр</a></li>
+            <li><a class="link" href="#services">Nail-дизайн</a></li>
+            <li><a class="link" href="#services">SPA-догляд</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <p class="footer__title">Контакти</p>
+          <p><a class="link" href="tel:+380441234567">+380 44 123 45 67</a></p>
+          <p>вул. Фіалкова, 7, Київ</p>
+          <a class="btn btn--primary btn--sm magnetic" href="#booking"><span class="btn__label">Записатися</span></a>
+        </div>
+      </div>
+
+      <p class="footer__big" aria-hidden="true">Violette</p>
+
+      <div class="footer__bottom">
+        <p>© 2026 Violette Beauty Studio. Демо-проєкт для портфоліо.</p>
+        <p>Фото та відео: <a class="link" href="CREDITS.md">Unsplash і Pexels</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="Повернутися нагору" data-to-top>
+    <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+  </button>
+
+  <!-- Лайтбокс -->
+  <dialog class="lightbox" aria-label="Перегляд роботи" data-lightbox>
+    <div class="lightbox__inner">
+      <figure class="lightbox__figure">
+        <img class="lightbox__img" src="" alt="" data-lightbox-img>
+        <figcaption class="lightbox__caption"><span data-lightbox-caption></span><span class="lightbox__counter" data-lightbox-counter></span></figcaption>
+      </figure>
+      <button class="lightbox__btn lightbox__btn--close" type="button" aria-label="Закрити" data-lightbox-close><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+      <button class="lightbox__btn lightbox__btn--prev" type="button" aria-label="Попереднє фото" data-lightbox-prev><svg aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+      <button class="lightbox__btn lightbox__btn--next" type="button" aria-label="Наступне фото" data-lightbox-next><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </div>
+  </dialog>
+
+  <!-- Тост для демо-посилань -->
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
